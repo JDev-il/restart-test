@@ -1,0 +1,75 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.item {
+  @include m.flex-between;
+  padding: v.$space-3 v.$space-4;
+  border-radius: v.$border-radius-md;
+  border: 1px solid v.$color-border;
+  background: v.$color-surface-card;
+  transition: border-color v.$transition-fast;
+
+  &:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+  }
+}
+
+.info {
+  @include m.flex-between;
+  flex: 1;
+  gap: v.$space-4;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+}
+
+.symbol {
+  font-size: v.$font-size-sm;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-text-primary;
+}
+
+.name {
+  font-size: v.$font-size-xs;
+  color: v.$color-text-secondary;
+  @include m.truncate;
+  max-width: 160px;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: v.$space-1;
+}
+
+.price {
+  font-size: v.$font-size-sm;
+  font-weight: v.$font-weight-semibold;
+  color: v.$color-text-primary;
+  @include m.mono-number;
+}
+
+.change {
+  @include m.flex-start;
+  gap: v.$space-1;
+  font-size: v.$font-size-xs;
+  font-weight: v.$font-weight-medium;
+
+  &.gain { color: v.$color-gain; }
+  &.loss { color: v.$color-loss; }
+}
+
+.removeBtn {
+  color: v.$color-text-disabled;
+  flex-shrink: 0;
+  margin-left: v.$space-2;
+
+  &:hover {
+    color: v.$color-loss;
+    background: v.$color-loss-subtle;
+  }
+}

@@ -1,15 +1,12 @@
 {
-  "name": "restart-test",
+  "name": "restart-test-worktree",
   "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "prompts": "^2.4.2"
-  },
   "scripts": {
     "init": "multi-agents init",
-    "agent": "node .workflow/run.js",
-    "restart": "node .workflow/restart.js",
-    "reset": "node .workflow/reset.js",
-    "complete": "node .workflow/complete.js"
+    "agent": "node \"/Volumes/Media Drive/Development/claude-patterns/playground/restart-test/.workflow/run.js\"",
+    "restart": "node \"/Volumes/Media Drive/Development/claude-patterns/playground/restart-test/.workflow/restart.js\"",
+    "reset": "node \"/Volumes/Media Drive/Development/claude-patterns/playground/restart-test/.workflow/reset.js\"",
+    "complete": "node \"/Volumes/Media Drive/Development/claude-patterns/playground/restart-test/.workflow/complete.js\""
   }
 }

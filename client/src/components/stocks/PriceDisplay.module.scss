@@ -1,0 +1,50 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-2;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+}
+
+.symbol {
+  font-size: v.$font-size-2xl;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-text-primary;
+}
+
+.name {
+  font-size: v.$font-size-sm;
+  color: v.$color-text-secondary;
+}
+
+.pricing {
+  @include m.flex-start;
+  gap: v.$space-3;
+  align-items: baseline;
+}
+
+.price {
+  font-size: v.$font-size-3xl;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-text-primary;
+  @include m.mono-number;
+}
+
+.change {
+  @include m.flex-start;
+  gap: v.$space-1;
+  font-size: v.$font-size-base;
+  font-weight: v.$font-weight-medium;
+  @include m.mono-number;
+
+  &.up   { color: v.$color-gain; }
+  &.down { color: v.$color-loss; }
+  &.flat { color: v.$color-neutral; }
+}

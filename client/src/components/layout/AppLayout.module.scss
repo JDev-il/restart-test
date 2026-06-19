@@ -1,0 +1,21 @@
+@use '../../styles/variables' as v;
+
+.root {
+  display: flex;
+  min-height: 100vh;
+  background: v.$color-bg;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin-left: v.$sidebar-width;
+}
+
+.content {
+  flex: 1;
+  padding-top: v.$topnav-height;
+  overflow-y: auto;
+}

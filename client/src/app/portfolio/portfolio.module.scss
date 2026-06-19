@@ -1,0 +1,39 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-6;
+  padding: v.$space-6;
+}
+
+.header {
+  padding-bottom: v.$space-4;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.title {
+  font-size: v.$font-size-2xl;
+  font-weight: v.$font-weight-bold;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-6;
+
+  @include m.breakpoint-xl {
+    grid-template-columns: 1fr 280px;
+  }
+}
+
+.main {
+  min-width: 0;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-4;
+}

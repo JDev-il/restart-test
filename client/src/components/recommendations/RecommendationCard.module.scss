@@ -1,0 +1,80 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.card {
+  @include m.card;
+  @include m.card-hover;
+  padding: v.$space-4 v.$space-5;
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-3;
+}
+
+.header {
+  @include m.flex-between;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+}
+
+.symbol {
+  font-size: v.$font-size-lg;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-accent;
+  transition: color v.$transition-fast;
+
+  &:hover { color: v.$color-accent-hover; }
+}
+
+.name {
+  font-size: v.$font-size-xs;
+  color: v.$color-text-secondary;
+}
+
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: v.$space-4;
+  padding: v.$space-3 0;
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.priceGroup {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+}
+
+.priceLabel {
+  font-size: v.$font-size-xs;
+  color: v.$color-text-secondary;
+}
+
+.priceValue {
+  font-size: v.$font-size-sm;
+  font-weight: v.$font-weight-semibold;
+  color: v.$color-text-primary;
+  @include m.mono-number;
+
+  &.gain { color: v.$color-gain; }
+  &.loss { color: v.$color-loss; }
+}
+
+.rationale {
+  font-size: v.$font-size-sm;
+  color: v.$color-text-secondary;
+  line-height: 1.6;
+}
+
+.footer {
+  @include m.flex-between;
+}
+
+.date {
+  font-size: v.$font-size-xs;
+  color: v.$color-text-disabled;
+}

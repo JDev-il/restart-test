@@ -1,0 +1,43 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.panel {
+  @include m.card;
+  padding: v.$space-4;
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-4;
+}
+
+.header {
+  @include m.flex-start;
+  gap: v.$space-2;
+}
+
+.icon {
+  color: v.$color-accent;
+}
+
+.title {
+  font-size: v.$font-size-base;
+  font-weight: v.$font-weight-semibold;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-2;
+}
+
+.chartPlaceholder {
+  @include m.flex-center;
+  height: 120px;
+  border: 1px dashed v.$color-border;
+  border-radius: v.$border-radius-md;
+  color: v.$color-text-disabled;
+}
+
+.chartLabel {
+  font-size: v.$font-size-xs;
+  color: v.$color-text-disabled;
+}

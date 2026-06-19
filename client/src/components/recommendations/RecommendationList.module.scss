@@ -1,0 +1,42 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-4;
+}
+
+.filters {
+  @include m.flex-start;
+  gap: v.$space-2;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: v.$space-2 v.$space-4;
+  border-radius: v.$border-radius-full;
+  font-size: v.$font-size-sm;
+  font-weight: v.$font-weight-medium;
+  color: v.$color-text-secondary;
+  background: v.$color-surface-card;
+  border: 1px solid v.$color-border;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    border-color: v.$color-accent;
+    color: v.$color-text-primary;
+  }
+
+  &.active {
+    background: v.$color-accent;
+    border-color: v.$color-accent;
+    color: #fff;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-3;
+}

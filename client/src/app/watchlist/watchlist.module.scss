@@ -1,0 +1,24 @@
+@use '../../styles/variables' as v;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-6;
+  padding: v.$space-6;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+}
+
+.title {
+  font-size: v.$font-size-2xl;
+  font-weight: v.$font-weight-bold;
+}
+
+.subtitle {
+  font-size: v.$font-size-sm;
+  color: v.$color-text-secondary;
+}

@@ -1,0 +1,49 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-4;
+  height: 100%;
+}
+
+.controls {
+  @include m.flex-start;
+  gap: v.$space-1;
+}
+
+.rangeBtn {
+  padding: v.$space-1 v.$space-3;
+  border-radius: v.$border-radius-sm;
+  font-size: v.$font-size-xs;
+  font-weight: v.$font-weight-medium;
+  color: v.$color-text-secondary;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    color: v.$color-text-primary;
+    border-color: v.$color-border;
+  }
+
+  &.active {
+    color: v.$color-accent;
+    border-color: v.$color-accent;
+    background: rgba(37, 99, 235, 0.1);
+  }
+}
+
+.chartArea {
+  @include m.flex-center;
+  flex: 1;
+  min-height: 300px;
+  border: 1px dashed v.$color-border;
+  border-radius: v.$border-radius-md;
+}
+
+.placeholder {
+  font-size: v.$font-size-sm;
+  color: v.$color-text-disabled;
+}

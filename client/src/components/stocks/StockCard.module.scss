@@ -1,0 +1,54 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.card {
+  @include m.flex-between;
+  @include m.card;
+  @include m.card-hover;
+  padding: v.$space-3 v.$space-4;
+  cursor: pointer;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+}
+
+.symbol {
+  font-size: v.$font-size-sm;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-text-primary;
+}
+
+.name {
+  font-size: v.$font-size-xs;
+  color: v.$color-text-secondary;
+  @include m.truncate;
+  max-width: 140px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: v.$space-1;
+}
+
+.price {
+  font-size: v.$font-size-sm;
+  font-weight: v.$font-weight-semibold;
+  color: v.$color-text-primary;
+  @include m.mono-number;
+}
+
+.change {
+  @include m.flex-start;
+  gap: v.$space-1;
+  font-size: v.$font-size-xs;
+  font-weight: v.$font-weight-medium;
+  font-size: 0.75rem;
+
+  &.gain { color: v.$color-gain; }
+  &.loss { color: v.$color-loss; }
+}

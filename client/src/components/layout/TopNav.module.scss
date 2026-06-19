@@ -1,0 +1,72 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.topnav {
+  @include m.flex-between;
+  position: fixed;
+  top: 0;
+  left: v.$sidebar-width;
+  right: 0;
+  height: v.$topnav-height;
+  background: v.$color-surface;
+  border-bottom: 1px solid v.$color-border;
+  padding: 0 v.$space-6;
+  gap: v.$space-4;
+  z-index: v.$z-topnav;
+}
+
+.search {
+  @include m.flex-start;
+  gap: v.$space-2;
+  background: v.$color-surface-card;
+  border: 1px solid v.$color-border;
+  border-radius: v.$border-radius-md;
+  padding: v.$space-2 v.$space-3;
+  flex: 1;
+  max-width: 480px;
+  transition: border-color v.$transition-fast;
+
+  &:focus-within {
+    border-color: v.$color-accent;
+  }
+}
+
+.searchIcon {
+  color: v.$color-text-disabled;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  font-size: v.$font-size-sm;
+  color: v.$color-text-primary;
+
+  input {
+    padding: 0;
+
+    &::placeholder {
+      color: v.$color-text-disabled;
+    }
+  }
+}
+
+.actions {
+  @include m.flex-start;
+  gap: v.$space-2;
+}
+
+.iconBtn {
+  color: v.$color-text-secondary;
+
+  &:hover {
+    color: v.$color-text-primary;
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.avatar {
+  background: v.$color-accent;
+  font-size: v.$font-size-xs;
+  font-weight: v.$font-weight-semibold;
+  cursor: pointer;
+}

@@ -1,0 +1,43 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.card {
+  @include m.card;
+  padding: v.$space-4 v.$space-5;
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-2;
+}
+
+.header {
+  @include m.flex-between;
+}
+
+.label {
+  font-size: v.$font-size-xs;
+  font-weight: v.$font-weight-medium;
+  color: v.$color-text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.icon {
+  color: v.$color-text-disabled;
+  display: flex;
+}
+
+.value {
+  font-size: v.$font-size-2xl;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-text-primary;
+  @include m.mono-number;
+}
+
+.subValue {
+  font-size: v.$font-size-sm;
+  font-weight: v.$font-weight-medium;
+
+  &.up    { color: v.$color-gain; }
+  &.down  { color: v.$color-loss; }
+  &.neutral { color: v.$color-text-secondary; }
+}

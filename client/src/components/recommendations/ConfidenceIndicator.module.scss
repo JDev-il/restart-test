@@ -1,0 +1,24 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.indicator {
+  @include m.flex-start;
+  gap: v.$space-2;
+  font-size: v.$font-size-xs;
+  font-weight: v.$font-weight-medium;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: v.$border-radius-full;
+  flex-shrink: 0;
+}
+
+.high   .dot { background: v.$color-gain; }
+.medium .dot { background: #f59e0b; }
+.low    .dot { background: v.$color-neutral; }
+
+.high   { color: v.$color-gain; }
+.medium { color: #f59e0b; }
+.low    { color: v.$color-neutral; }

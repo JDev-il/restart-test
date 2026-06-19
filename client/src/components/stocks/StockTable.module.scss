@@ -1,0 +1,33 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.container {
+  background: v.$color-surface-card !important;
+  border: 1px solid v.$color-border !important;
+  border-radius: v.$border-radius-lg !important;
+}
+
+.th {
+  font-size: v.$font-size-xs !important;
+  font-weight: v.$font-weight-semibold !important;
+  color: v.$color-text-secondary !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.row {
+  cursor: pointer;
+}
+
+.symbolCell {
+  font-weight: v.$font-weight-bold !important;
+  color: v.$color-accent !important;
+}
+
+.mono {
+  @include m.mono-number;
+  font-size: v.$font-size-sm !important;
+}
+
+.gain { color: v.$color-gain !important; }
+.loss { color: v.$color-loss !important; }

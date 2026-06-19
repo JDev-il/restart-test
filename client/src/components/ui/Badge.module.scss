@@ -1,0 +1,18 @@
+@use '../../styles/variables' as v;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: v.$space-1 v.$space-2;
+  border-radius: v.$border-radius-full;
+  font-size: v.$font-size-xs;
+  font-weight: v.$font-weight-semibold;
+  letter-spacing: 0.04em;
+  line-height: 1;
+
+  &.gain    { background: v.$color-gain-subtle;  color: v.$color-gain; }
+  &.loss    { background: v.$color-loss-subtle;  color: v.$color-loss; }
+  &.neutral { background: rgba(148, 163, 184, 0.12); color: v.$color-neutral; }
+  &.accent  { background: rgba(37, 99, 235, 0.15);   color: v.$color-accent; }
+  &.warning { background: rgba(245, 158, 11, 0.12);  color: #f59e0b; }
+}

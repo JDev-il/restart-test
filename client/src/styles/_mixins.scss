@@ -1,0 +1,92 @@
+@use 'variables' as v;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin card {
+  background: v.$color-surface-card;
+  border: 1px solid v.$color-border;
+  border-radius: v.$border-radius-lg;
+  box-shadow: v.$shadow-card;
+}
+
+@mixin card-hover {
+  transition: border-color v.$transition-base, box-shadow v.$transition-base;
+
+  &:hover {
+    border-color: rgba(37, 99, 235, 0.4);
+    box-shadow: v.$shadow-raised;
+  }
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: v.$color-border transparent;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: v.$color-border;
+    border-radius: v.$border-radius-full;
+  }
+}
+
+@mixin gain-text {
+  color: v.$color-gain;
+  font-weight: v.$font-weight-medium;
+}
+
+@mixin loss-text {
+  color: v.$color-loss;
+  font-weight: v.$font-weight-medium;
+}
+
+@mixin mono-number {
+  font-family: v.$font-family-mono;
+  font-variant-numeric: tabular-nums;
+}
+
+@mixin responsive-grid($min: 280px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min, 1fr));
+  gap: v.$space-4;
+}
+
+@mixin breakpoint-md {
+  @media (min-width: 768px) { @content; }
+}
+
+@mixin breakpoint-lg {
+  @media (min-width: 1024px) { @content; }
+}
+
+@mixin breakpoint-xl {
+  @media (min-width: 1280px) { @content; }
+}

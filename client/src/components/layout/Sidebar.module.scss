@@ -1,0 +1,85 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: v.$sidebar-width;
+  background: v.$color-surface;
+  border-right: 1px solid v.$color-border;
+  display: flex;
+  flex-direction: column;
+  z-index: v.$z-sidebar;
+  overflow-y: auto;
+  @include m.scrollbar-thin;
+}
+
+.brand {
+  @include m.flex-start;
+  gap: v.$space-3;
+  padding: v.$space-5 v.$space-5;
+  border-bottom: 1px solid v.$color-border;
+  height: v.$topnav-height;
+}
+
+.brandIcon {
+  @include m.flex-center;
+  width: 32px;
+  height: 32px;
+  border-radius: v.$border-radius-md;
+  background: v.$color-accent;
+  font-size: v.$font-size-base;
+  font-weight: v.$font-weight-bold;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-size: v.$font-size-base;
+  font-weight: v.$font-weight-semibold;
+  color: v.$color-text-primary;
+  @include m.truncate;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-1;
+  padding: v.$space-4 v.$space-3;
+}
+
+.navItem {
+  @include m.flex-start;
+  gap: v.$space-3;
+  padding: v.$space-3 v.$space-3;
+  border-radius: v.$border-radius-md;
+  color: v.$color-text-secondary;
+  font-size: v.$font-size-sm;
+  font-weight: v.$font-weight-medium;
+  transition: background v.$transition-fast, color v.$transition-fast;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: v.$color-text-primary;
+  }
+
+  &.active {
+    background: rgba(37, 99, 235, 0.15);
+    color: v.$color-accent;
+
+    .navIcon {
+      color: v.$color-accent;
+    }
+  }
+}
+
+.navIcon {
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.navLabel {
+  @include m.truncate;
+}

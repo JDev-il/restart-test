@@ -1,0 +1,23 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-4;
+}
+
+.header {
+  @include m.flex-between;
+}
+
+.count {
+  font-size: v.$font-size-sm;
+  color: v.$color-text-secondary;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-2;
+}

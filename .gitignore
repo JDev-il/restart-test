@@ -1,7 +1,9 @@
-worktrees/
-
-.scaffold/
-
-.workflow/
-
+# Framework files — never commit these to the agent branch
+package.json
+.claude-scope
+scope.json
+TASK.md
+.vscode/
+.idea/
+.zed/
 node_modules/

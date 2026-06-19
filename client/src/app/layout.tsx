@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { Provider } from 'react-redux';
 import StyledComponentsRegistry from '@/lib/registry';
 import theme from '@/lib/theme';
+import { store } from '@/lib/store';
 import './globals.scss';
 
 export const metadata: Metadata = {
@@ -14,12 +16,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <StyledComponentsRegistry>
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            {children}
-          </ThemeProvider>
-        </StyledComponentsRegistry>
+        <Provider store={store}>
+          <StyledComponentsRegistry>
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              {children}
+            </ThemeProvider>
+          </StyledComponentsRegistry>
+        </Provider>
       </body>
     </html>
   );
